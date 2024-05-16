@@ -17,7 +17,7 @@ import model.PC;
 
 /**
  *
- * @author Tran Nhat Sinh
+ *
  */
 public class AddProduct extends javax.swing.JDialog {
 

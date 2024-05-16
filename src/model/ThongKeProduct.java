@@ -8,7 +8,7 @@ import java.util.Objects;
 
 /**
  *
- * @author sinh
+ * 
  */
 public class ThongKeProduct {
     private String maMay;

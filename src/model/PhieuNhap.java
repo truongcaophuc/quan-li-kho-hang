@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Tran Nhat Sinh
+ * 
  */
 public class PhieuNhap extends Phieu {
 

@@ -15,7 +15,7 @@ import dao.AccountDAO;
 
 /**
  *
- * @author Tran Nhat Sinh
+ *
  */
 public class UpdateAccount extends javax.swing.JDialog {
 
