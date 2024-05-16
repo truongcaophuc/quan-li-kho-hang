@@ -14,7 +14,7 @@ import model.PC;
 
 /**
  *
- * @author Tran Nhat Sinh
+ * @author ACER
  */
 public class PCDAO implements DAOInterface<PC> {
 
