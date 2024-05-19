@@ -15,26 +15,25 @@ import model.PC;
 
 /**
  *
- * 
+ * @author Tran Nhat Sinh con lon
  */
-public class UpdateProduct extends javax.swing.JDialog {
+public class DetailProduct extends javax.swing.JDialog {
 
     /**
      * Creates new form ThemSP
      */
     private ProductForm owner;
-    DecimalFormat formatterE = new DecimalFormat("0");
-    
-    public UpdateProduct(javax.swing.JInternalFrame parent, javax.swing.JFrame owner, boolean modal) {
-        super(owner, modal);
-        this.owner = (ProductForm) parent;
+    DecimalFormat formatter = new DecimalFormat("###,###,###");
+    public DetailProduct(javax.swing.JInternalFrame parent, javax.swing.JFrame owner, boolean modal) {
+        super(owner, modal);       
         initComponents();
         setLocationRelativeTo(null);
+        this.owner = (ProductForm) parent;
         if (this.owner.checklap()) {
             Laptop a = this.owner.getDetailLapTop();
             txtMaSanPham.setText(a.getMaMay());
             txtTenSanPham.setText(a.getTenMay());
-            txtDonGia.setText(formatterE.format(a.getGia()));
+            txtDonGia.setText(formatter.format(a.getGia())+"đ");
             txtCPU.setText(a.getTenCpu());
             txtRAM.setText(a.getRam());
             txtROM.setText(a.getRom());
@@ -43,12 +42,12 @@ public class UpdateProduct extends javax.swing.JDialog {
             cbxloaisp.setSelectedIndex(0);
             txtKichThuocMan.setText(Double.toString(a.getkichThuocMan()));
             txtDungLuongPin.setText(a.getDungLuongPin());
-            txtSoLuong.setText(a.getSoLuong() + "");
+            txtSoLuong.setText(Integer.toString(a.getSoLuong()));
         } else {
             PC a = this.owner.getDetailPC();
             txtMaSanPham.setText(a.getMaMay());
             txtTenSanPham.setText(a.getTenMay());
-            txtDonGia.setText(Double.toString(a.getGia()));
+            txtDonGia.setText(formatter.format(a.getGia())+"đ");
             txtCPU.setText(a.getTenCpu());
             txtRAM.setText(a.getRam());
             txtROM.setText(a.getRom());
@@ -56,12 +55,13 @@ public class UpdateProduct extends javax.swing.JDialog {
             txtXuatXu.setText(a.getXuatXu());
             cbxloaisp.setSelectedIndex(1);
             txtMainBoard.setText(a.getMainBoard());
-            txtCongsuatNguon.setText(Integer.toString(a.getCongSuatNguon()));
+            txtCongsuatNguon.setText(Integer.toString(a.getCongSuatNguon()) + "W");
             txtSoLuong.setText(Integer.toString(a.getSoLuong()));
         }
     }
     
-    private UpdateProduct(JFrame jFrame, boolean b) {
+
+    private DetailProduct(JFrame jFrame, boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -91,8 +91,6 @@ public class UpdateProduct extends javax.swing.JDialog {
         txtGPU = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         cbxloaisp = new javax.swing.JComboBox<>();
-        btnAddProduct = new javax.swing.JButton();
-        btnCancel = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         laptop = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -107,62 +105,51 @@ public class UpdateProduct extends javax.swing.JDialog {
         jLabel15 = new javax.swing.JLabel();
         txtXuatXu = new javax.swing.JTextField();
         txtSoLuong = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Chỉnh sửa sản phẩm");
+        setTitle("Thêm sản phẩm mới");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
         jLabel2.setText("Mã sản phẩm");
 
-        txtMaSanPham.setEditable(false);
-        txtMaSanPham.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
-        txtMaSanPham.setRequestFocusEnabled(false);
+        txtMaSanPham.setEnabled(false);
 
-        jLabel3.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
         jLabel3.setText("Tên sản phẩm");
 
-        txtTenSanPham.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
+        txtTenSanPham.setEnabled(false);
 
-        jLabel4.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
-        jLabel4.setText("Số lượng");
+        jLabel4.setText("Đơn giá");
 
-        txtDonGia.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
+        txtDonGia.setEnabled(false);
 
-        jLabel6.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
         jLabel6.setText("CPU");
 
-        txtCPU.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
+        txtCPU.setEnabled(false);
 
-        jLabel7.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
         jLabel7.setText("RAM");
 
-        txtRAM.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
+        txtRAM.setEnabled(false);
 
-        jLabel8.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
         jLabel8.setText("Dung lượng lưu trữ");
 
-        txtROM.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
+        txtROM.setEnabled(false);
         txtROM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtROMActionPerformed(evt);
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
         jLabel9.setText("Card đồ hoạ");
 
-        txtGPU.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
+        txtGPU.setEnabled(false);
 
-        jLabel10.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
         jLabel10.setText("Loại sản phẩm");
 
-        cbxloaisp.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
         cbxloaisp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laptop", "PC - Lắp ráp" }));
         cbxloaisp.setEnabled(false);
         cbxloaisp.addItemListener(new java.awt.event.ItemListener() {
@@ -176,43 +163,17 @@ public class UpdateProduct extends javax.swing.JDialog {
             }
         });
 
-        btnAddProduct.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
-        btnAddProduct.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
-        btnAddProduct.setForeground(new java.awt.Color(255, 255, 255));
-        btnAddProduct.setText("Lưu thay đổi");
-        btnAddProduct.setBorder(null);
-        btnAddProduct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAddProduct.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddProductActionPerformed(evt);
-            }
-        });
-
-        btnCancel.setBackground(new java.awt.Color(255, 0, 0));
-        btnCancel.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
-        btnCancel.setForeground(new java.awt.Color(255, 255, 255));
-        btnCancel.setText("Huỷ bỏ");
-        btnCancel.setBorder(null);
-        btnCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelActionPerformed(evt);
-            }
-        });
-
         jPanel3.setLayout(new java.awt.CardLayout());
 
         laptop.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel11.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
         jLabel11.setText("Kích thước màn");
 
-        txtKichThuocMan.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
+        txtKichThuocMan.setEnabled(false);
 
-        jLabel12.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
         jLabel12.setText("Dung lượng PIN");
 
-        txtDungLuongPin.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
+        txtDungLuongPin.setEnabled(false);
 
         javax.swing.GroupLayout laptopLayout = new javax.swing.GroupLayout(laptop);
         laptop.setLayout(laptopLayout);
@@ -223,7 +184,7 @@ public class UpdateProduct extends javax.swing.JDialog {
                 .addGroup(laptopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 92, Short.MAX_VALUE))
+                .addGap(0, 98, Short.MAX_VALUE))
             .addComponent(txtDungLuongPin)
         );
         laptopLayout.setVerticalGroup(
@@ -245,8 +206,17 @@ public class UpdateProduct extends javax.swing.JDialog {
         jLabel13.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
         jLabel13.setText("MainBoard");
 
+        txtMainBoard.setEnabled(false);
+        txtMainBoard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMainBoardActionPerformed(evt);
+            }
+        });
+
         jLabel14.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
         jLabel14.setText("Công suất nguồn");
+
+        txtCongsuatNguon.setEnabled(false);
 
         javax.swing.GroupLayout pcLayout = new javax.swing.GroupLayout(pc);
         pc.setLayout(pcLayout);
@@ -257,8 +227,8 @@ public class UpdateProduct extends javax.swing.JDialog {
             .addGroup(pcLayout.createSequentialGroup()
                 .addGroup(pcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 45, Short.MAX_VALUE))
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 79, Short.MAX_VALUE))
         );
         pcLayout.setVerticalGroup(
             pcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,15 +244,13 @@ public class UpdateProduct extends javax.swing.JDialog {
 
         jPanel3.add(pc, "card2");
 
-        jLabel15.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
         jLabel15.setText("Xuất xứ");
 
-        txtXuatXu.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
+        txtXuatXu.setEnabled(false);
 
-        txtSoLuong.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
+        txtSoLuong.setEnabled(false);
 
-        jLabel16.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
-        jLabel16.setText("Đơn giá");
+        jLabel5.setText("Số lượng");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -292,20 +260,20 @@ public class UpdateProduct extends javax.swing.JDialog {
                 .addGap(58, 58, 58)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(198, 198, 198)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(221, 221, 221)
                         .addComponent(jLabel8))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtDonGia, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                                .addComponent(txtSoLuong))
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtDonGia, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                            .addComponent(jLabel5)
+                            .addComponent(txtSoLuong))
                         .addGap(91, 91, 91)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtGPU, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtROM, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel9)
+                                .addComponent(txtGPU, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtTenSanPham, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -321,23 +289,20 @@ public class UpdateProduct extends javax.swing.JDialog {
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCPU, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel2))
-                .addGap(124, 124, 124)
+                .addGap(101, 101, 101)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cbxloaisp, 0, 186, Short.MAX_VALUE)
-                    .addComponent(txtXuatXu)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(43, 43, 43))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(242, 242, 242)
-                .addComponent(btnAddProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85)
-                .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbxloaisp, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(txtXuatXu))
+                        .addGap(43, 43, 43))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -355,12 +320,6 @@ public class UpdateProduct extends javax.swing.JDialog {
                 .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtXuatXu, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel7))
@@ -368,58 +327,58 @@ public class UpdateProduct extends javax.swing.JDialog {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtTenSanPham, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtRAM, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel8))
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtDonGia, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtROM, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(jLabel8))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel4)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtROM, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel16)
+                                .addGap(9, 9, 9)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel15))
+                                .addGap(9, 9, 9))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtDonGia, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtGPU, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAddProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29))))
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtSoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtGPU, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtXuatXu, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 880, 400));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 880, 330));
 
         jPanel2.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
 
+        jLabel1.setBackground(new java.awt.Color(0, 132, 255));
         jLabel1.setFont(new java.awt.Font("SF Pro Display", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("CẬP NHẬT THÔNG TIN SẢN PHẨM");
+        jLabel1.setText("THÔNG TIN SẢN PHẨM");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(255, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(311, 311, 311)
                 .addComponent(jLabel1)
-                .addGap(244, 244, 244))
+                .addContainerGap(313, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 60));
@@ -431,9 +390,10 @@ public class UpdateProduct extends javax.swing.JDialog {
         // TODO add your handling code here:
         if (cbxloaisp.getSelectedItem().equals("Laptop")) {
             CardLayout productCategory = (CardLayout) jPanel3.getLayout();
-            productCategory.first(jPanel3);           
+            productCategory.first(jPanel3);
+
         }
-        
+
         if (cbxloaisp.getSelectedItem().equals("PC - Lắp ráp")) {
             CardLayout productCategory = (CardLayout) jPanel3.getLayout();
             productCategory.last(jPanel3);
@@ -444,78 +404,13 @@ public class UpdateProduct extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxloaispActionPerformed
 
-    private void btnAddProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddProductActionPerformed
-        // TODO add your handling code here:
-        String maMay = txtMaSanPham.getText();
-        String tenMay = txtTenSanPham.getText();
-        int soluong = 0;
-        double dongia = 0;
-        try {
-            soluong = Integer.parseInt(txtSoLuong.getText());
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Vui lòng nhập số lượng ở dạng số !");
-        }
-        try {
-            dongia = Double.parseDouble(txtDonGia.getText());
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Vui lòng nhập đơn giá ở dạng số !");
-        }
-        String cpu = txtCPU.getText();
-        String ram = txtRAM.getText();
-        String rom = txtROM.getText();
-        String gpu = txtGPU.getText();
-        String xuatxu = txtXuatXu.getText();
-        if (cbxloaisp.getSelectedItem().equals("Laptop")) {
-            double kichthuocman = 0;
-            try {
-                kichthuocman = Double.parseDouble(txtKichThuocMan.getText());
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(this, "Vui lòng nhập kích thước màn ở dạng số !");
-            }
-            String dungluongpin = txtDungLuongPin.getText();
-            if (maMay.equals("") || tenMay.equals("") || cpu.equals("") || ram.equals("") || rom.equals("") || gpu.equals("") || xuatxu.equals("") || dungluongpin.equals("")) {
-                JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin !");
-            } else {
-                Laptop lp = new Laptop(kichthuocman, dungluongpin, maMay, tenMay, soluong, dongia, cpu, ram, xuatxu, gpu, rom,1);
-                try {
-                    LaptopDAO.getInstance().update(lp);
-                    this.dispose();
-                    JOptionPane.showMessageDialog(this, "Sửa sản phẩm thành công !");
-                    owner.loadDataToTable();
-                } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Sửa sản phẩm thất bại !");
-                }
-            }
-        }
-        if (cbxloaisp.getSelectedItem().equals("PC - Lắp ráp")) {
-            String mainboard = txtMainBoard.getText();
-            int congsuatnguon = 0;
-            try {
-                congsuatnguon = Integer.parseInt(txtCongsuatNguon.getText());
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(this, "Vui lòng nhập công suất nguồn ở dạng số !");
-            }
-            if (maMay.equals("") || tenMay.equals("") || cpu.equals("") || ram.equals("") || rom.equals("") || gpu.equals("") || xuatxu.equals("") || mainboard.equals("")) {
-                JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin !");
-            } else {
-                PC pc = new PC(mainboard, congsuatnguon, maMay, tenMay, soluong, dongia, cpu, ram, xuatxu, gpu, rom,1);
-                System.out.println(pc);
-                PCDAO.getInstance().update(pc);
-                this.dispose();
-                JOptionPane.showMessageDialog(this, "Sửa sản phẩm thành công !");
-                owner.loadDataToTable();
-            }
-        }
-    }//GEN-LAST:event_btnAddProductActionPerformed
-
-    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-    }//GEN-LAST:event_btnCancelActionPerformed
-
     private void txtROMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtROMActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtROMActionPerformed
+
+    private void txtMainBoardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMainBoardActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMainBoardActionPerformed
 
     /**
      * @param args the command line arguments
@@ -534,14 +429,18 @@ public class UpdateProduct extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UpdateProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DetailProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UpdateProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DetailProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UpdateProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DetailProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UpdateProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DetailProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -550,7 +449,7 @@ public class UpdateProduct extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                UpdateProduct dialog = new UpdateProduct(new javax.swing.JFrame(), true);
+                DetailProduct dialog = new DetailProduct(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -563,8 +462,6 @@ public class UpdateProduct extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddProduct;
-    private javax.swing.JButton btnCancel;
     private javax.swing.JComboBox<String> cbxloaisp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -573,10 +470,10 @@ public class UpdateProduct extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

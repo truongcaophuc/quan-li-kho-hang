@@ -17,7 +17,7 @@ import model.PC;
 
 /**
  *
- *
+ * @author Tran Nhat Sinh
  */
 public class AddProduct extends javax.swing.JDialog {
 
@@ -123,7 +123,7 @@ public class AddProduct extends javax.swing.JDialog {
             }
         });
 
-        btnAddProduct.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        btnAddProduct.setBackground(new java.awt.Color(0, 132, 255));
         btnAddProduct.setForeground(new java.awt.Color(255, 255, 255));
         btnAddProduct.setText("Thêm sản phẩm");
         btnAddProduct.setBorder(null);
@@ -332,7 +332,7 @@ public class AddProduct extends javax.swing.JDialog {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 880, 400));
 
-        jPanel2.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        jPanel2.setBackground(new java.awt.Color(0, 132, 255));
 
         jLabel1.setFont(new java.awt.Font("SF Pro Display", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));

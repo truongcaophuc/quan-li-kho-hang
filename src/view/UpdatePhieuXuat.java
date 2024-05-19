@@ -27,7 +27,7 @@ import model.PhieuXuat;
 
 /**
  *
- *
+ * @author Tran Nhat Sinh
  */
 public class UpdatePhieuXuat extends javax.swing.JDialog {
 

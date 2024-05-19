@@ -24,7 +24,7 @@ import model.PhieuXuat;
 
 /**
  *
- * 
+ * @author Tran Nhat Sinh con lon
  */
 public class CTThongKe extends javax.swing.JDialog {
 
@@ -141,8 +141,9 @@ public class CTThongKe extends javax.swing.JDialog {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        jPanel2.setBackground(new java.awt.Color(0, 132, 255));
 
+        jLabel1.setBackground(new java.awt.Color(0, 132, 255));
         jLabel1.setFont(new java.awt.Font("SF Pro Display", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CHI TIẾT PHIẾU ");

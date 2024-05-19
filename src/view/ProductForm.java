@@ -9,11 +9,16 @@ import dao.LaptopDAO;
 import dao.MayTinhDAO;
 import dao.PCDAO;
 import java.awt.Desktop;
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -21,6 +26,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
+import model.Account;
 import model.Laptop;
 import model.MayTinh;
 import model.PC;
@@ -28,24 +34,20 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  *
- * @author Tran Nhat Sinh
+ * @author Robot
  */
-
-
-public class TonKhoForm extends javax.swing.JInternalFrame {
+public class ProductForm extends javax.swing.JInternalFrame {
 
     private DefaultTableModel tblModel;
     DecimalFormat formatter = new DecimalFormat("###,###,###");
-
-    public TonKhoForm() {
+    
+    public ProductForm() {
         initComponents();
         BasicInternalFrameUI ui = (BasicInternalFrameUI) this.getUI();
         ui.setNorthPane(null);
@@ -53,6 +55,18 @@ public class TonKhoForm extends javax.swing.JInternalFrame {
         initTable();
         loadDataToTable();
         changeTextFind();
+    }
+    
+    public void checkRole(Account t) {
+        if(t.getRole().equals("Nhân viên nhập") || t.getRole().equals("Nhân viên xuất")) {
+            btnAdd.setEnabled(false);
+            btnDelete.setEnabled(false);
+            btnEdit.setEnabled(false);
+            jButton6.setEnabled(false);
+            jButton2.setEnabled(false);
+        } else {
+            System.out.println("abcdjad");
+        }
     }
 
     public final void initTable() {
@@ -70,7 +84,7 @@ public class TonKhoForm extends javax.swing.JInternalFrame {
     public void loadDataToTable() {
         try {
             MayTinhDAO mtdao = new MayTinhDAO();
-            ArrayList<MayTinh> armt = mtdao.selectAllE();
+            ArrayList<MayTinh> armt = mtdao.selectAll();
             tblModel.setRowCount(0);
             for (MayTinh i : armt) {
                 if (i.getTrangThai() == 1) {
@@ -106,6 +120,7 @@ public class TonKhoForm extends javax.swing.JInternalFrame {
         btnDetail = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
         jButton6 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jComboBoxLuaChon = new javax.swing.JComboBox<>();
         jTextFieldSearch = new javax.swing.JTextField();
@@ -125,7 +140,6 @@ public class TonKhoForm extends javax.swing.JInternalFrame {
         btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_add_40px.png"))); // NOI18N
         btnAdd.setText("Thêm");
         btnAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAdd.setEnabled(false);
         btnAdd.setFocusable(false);
         btnAdd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAdd.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -139,7 +153,6 @@ public class TonKhoForm extends javax.swing.JInternalFrame {
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_delete_40px.png"))); // NOI18N
         btnDelete.setText("Xoá");
         btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnDelete.setEnabled(false);
         btnDelete.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnDelete.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +165,6 @@ public class TonKhoForm extends javax.swing.JInternalFrame {
         btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_edit_40px.png"))); // NOI18N
         btnEdit.setText("Sửa");
         btnEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEdit.setEnabled(false);
         btnEdit.setFocusable(false);
         btnEdit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnEdit.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -166,7 +178,6 @@ public class TonKhoForm extends javax.swing.JInternalFrame {
         btnDetail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_eye_40px.png"))); // NOI18N
         btnDetail.setText("Xem chi tiết");
         btnDetail.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnDetail.setEnabled(false);
         btnDetail.setFocusable(false);
         btnDetail.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnDetail.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -190,14 +201,32 @@ public class TonKhoForm extends javax.swing.JInternalFrame {
         });
         jToolBar1.add(jButton6);
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_xls_40px.png"))); // NOI18N
+        jButton2.setText("Nhập Excel");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setFocusable(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jButton2);
+
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Tìm kiếm"));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jComboBoxLuaChon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tất cả", "Mã máy", "Tên máy", "Số lượng", "Đơn giá", "RAM", "CPU", "Dung lượng", "Card màn hình", "Xuất xứ" }));
+        jComboBoxLuaChon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tất cả", "Mã máy", "Tên máy", "Số lượng", "Đơn giá", "RAM", "CPU", "Dung lượng", "Card màn hình", "Xuất xứ", "Đã xóa" }));
         jComboBoxLuaChon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxLuaChonActionPerformed(evt);
+            }
+        });
+        jComboBoxLuaChon.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jComboBoxLuaChonPropertyChange(evt);
             }
         });
         jPanel3.add(jComboBoxLuaChon, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 150, 40));
@@ -210,7 +239,7 @@ public class TonKhoForm extends javax.swing.JInternalFrame {
                 jTextFieldSearchKeyReleased(evt);
             }
         });
-        jPanel3.add(jTextFieldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 360, 40));
+        jPanel3.add(jTextFieldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 360, 40));
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_reset_25px_1.png"))); // NOI18N
         jButton7.setText("Làm mới");
@@ -220,7 +249,7 @@ public class TonKhoForm extends javax.swing.JInternalFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, 140, 40));
+        jPanel3.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, 140, 40));
 
         tblSanPham.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -240,10 +269,10 @@ public class TonKhoForm extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
+                        .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1168, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -327,8 +356,70 @@ public class TonKhoForm extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        File excelFile;
+        FileInputStream excelFIS = null;
+        BufferedInputStream excelBIS = null;
+        XSSFWorkbook excelJTableImport = null;
+        ArrayList<MayTinh> listAccExcel = new ArrayList<MayTinh>();
+        JFileChooser jf = new JFileChooser();
+        int result = jf.showOpenDialog(null);
+        jf.setDialogTitle("Open file");
+        Workbook workbook = null;
+        if (result == JFileChooser.APPROVE_OPTION) {
+            try {
+                excelFile = jf.getSelectedFile();
+                excelFIS = new FileInputStream(excelFile);
+                excelBIS = new BufferedInputStream(excelFIS);
+                excelJTableImport = new XSSFWorkbook(excelBIS);
+                XSSFSheet excelSheet = excelJTableImport.getSheetAt(0);
+                for (int row = 1; row <= excelSheet.getLastRowNum(); row++) {
+                    XSSFRow excelRow = excelSheet.getRow(row);
+                    String maMay = excelRow.getCell(0).getStringCellValue();
+                    String tenMay = excelRow.getCell(1).getStringCellValue();
+                    int soLuong = (int) excelRow.getCell(2).getNumericCellValue();
+                    String giaFomat = excelRow.getCell(3).getStringCellValue().replaceAll(",", "");
+                    int viTri = giaFomat.length() - 1;
+                    String giaoke = giaFomat.substring(0, viTri) + giaFomat.substring(viTri + 1);
+                    double donGia = Double.parseDouble(giaoke);
+                    String boXuLi = excelRow.getCell(4).getStringCellValue();
+                    String ram = excelRow.getCell(5).getStringCellValue();
+                    String boNho = excelRow.getCell(6).getStringCellValue();
+                    MayTinh mt = new MayTinh(maMay, tenMay, soLuong, donGia, boXuLi, ram, "", "", boNho, 1);
+                    listAccExcel.add(mt);
+                    DefaultTableModel table_acc = (DefaultTableModel) tblSanPham.getModel();
+                    table_acc.setRowCount(0);
+                    loadDataToTableSearch(listAccExcel);
+                }
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(ProductForm.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(ProductForm.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        for (int i = 0; i < listAccExcel.size(); i++) {
+            MayTinh mayTinh = listAccExcel.get(i);
+            if (mayTinh.getMaMay().contains("LP")) {
+                Laptop lapNew = new Laptop(0, "", mayTinh.getMaMay(),
+                        mayTinh.getTenMay(), mayTinh.getSoLuong(), mayTinh.getGia(), mayTinh.getTenCpu(),
+                        mayTinh.getRam(), mayTinh.getXuatXu(), mayTinh.getCardManHinh(), mayTinh.getRom(), 1);
+                LaptopDAO.getInstance().insert(lapNew);
+            } else if (mayTinh.getMaMay().contains("PC")) {
+                PC pcNew = new PC("", 0, mayTinh.getMaMay(), mayTinh.getTenMay(), mayTinh.getSoLuong(),
+                        mayTinh.getGia(), mayTinh.getTenCpu(), mayTinh.getRam(), mayTinh.getXuatXu(), mayTinh.getCardManHinh(),
+                        mayTinh.getRom(), mayTinh.getTrangThai());
+                PCDAO.getInstance().insert(pcNew);
+            } else {
+                JOptionPane.showMessageDialog(this, "Mã máy " + mayTinh.getMaMay() + " không phù hợp !", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        jComboBoxLuaChon.setSelectedIndex(0);
+        loadDataToTable();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void btnDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetailActionPerformed
@@ -362,60 +453,13 @@ public class TonKhoForm extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_jTextFieldSearchKeyPressed
 
-    public boolean checklap() {
-        if (LaptopDAO.getInstance().isLaptop(getMayTinhSelect().getMaMay()) == true) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public Laptop getDetailLapTop() {
-        Laptop a = LaptopDAO.getInstance().selectById(getMayTinhSelect().getMaMay());
-        return a;
-    }
-
-    public PC getDetailPC() {
-        PC a = PCDAO.getInstance().selectById(getMayTinhSelect().getMaMay());
-        return a;
-    }
-
-    public void xoaMayTinhSelect() {
-        DefaultTableModel table_acc = (DefaultTableModel) tblSanPham.getModel();
-        int i_row = tblSanPham.getSelectedRow();
-        int luaChon = JOptionPane.showConfirmDialog(this, "Bạn có muốn xoá sản phẩm này?", "Xoá sản phẩm",
-                JOptionPane.YES_NO_OPTION);
-        if (luaChon == JOptionPane.YES_OPTION) {
-            MayTinhDAO.getInstance().delete(getMayTinhSelect());
-            table_acc.removeRow(i_row);
-        }
-    }
-
-    public MayTinh getMayTinhSelect() {
-        int i_row = tblSanPham.getSelectedRow();
-        MayTinh acc = MayTinhDAO.getInstance().selectAll().get(i_row);
-        return acc;
-    }
-
-    public void loadDataToTableSearch(ArrayList<MayTinh> result) {
-        try {
-            tblModel.setRowCount(0);
-            for (MayTinh i : result) {
-                if (i.getTrangThai() == 1) {
-                    String loaimay;
-                    if (LaptopDAO.getInstance().isLaptop(i.getMaMay()) == true) {
-                        loaimay = "Laptop";
-                    } else {
-                        loaimay = "PC/Case";
-                    }
-                    tblModel.addRow(new Object[]{
-                        i.getMaMay(), i.getTenMay(), i.getSoLuong(), formatter.format(i.getGia()) + "đ", i.getTenCpu(), i.getRam(), i.getRom(), loaimay
-                    });
-                }
-            }
-        } catch (Exception e) {
-        }
-    }
+    private void jComboBoxLuaChonPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jComboBoxLuaChonPropertyChange
+        // TODO add your handling code here:
+        String luaChon = jComboBoxLuaChon.getSelectedItem().toString();
+        String content = jTextFieldSearch.getText();
+        ArrayList<MayTinh> result = searchFn(luaChon, content);
+        loadDataToTableSearch(result);
+    }//GEN-LAST:event_jComboBoxLuaChonPropertyChange
 
     public ArrayList<MayTinh> searchFn(String luaChon, String content) {
         ArrayList<MayTinh> result = new ArrayList<>();
@@ -457,6 +501,60 @@ public class TonKhoForm extends javax.swing.JInternalFrame {
         return result;
     }
 
+    public boolean checklap() {
+        if (LaptopDAO.getInstance().isLaptop(getMayTinhSelect().getMaMay()) == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Laptop getDetailLapTop() {
+        Laptop a = LaptopDAO.getInstance().selectById(getMayTinhSelect().getMaMay());
+        return a;
+    }
+
+    public PC getDetailPC() {
+        PC a = PCDAO.getInstance().selectById(getMayTinhSelect().getMaMay());
+        return a;
+    }
+
+    public void xoaMayTinhSelect() {
+        DefaultTableModel table_acc = (DefaultTableModel) tblSanPham.getModel();
+        int i_row = tblSanPham.getSelectedRow();
+        int luaChon = JOptionPane.showConfirmDialog(this, "Bạn có muốn xoá sản phẩm này?", "Xoá sản phẩm",
+                JOptionPane.YES_NO_OPTION);
+        if (luaChon == JOptionPane.YES_OPTION) {
+            MayTinh remove = getMayTinhSelect();
+            MayTinhDAO.getInstance().deleteTrangThai(remove.getMaMay());
+        }
+        loadDataToTable();
+    }
+
+    public MayTinh getMayTinhSelect() {
+        int i_row = tblSanPham.getSelectedRow();
+        MayTinh acc = MayTinhDAO.getInstance().selectById(tblModel.getValueAt(i_row, 0).toString());
+        return acc;
+    }
+
+    public void loadDataToTableSearch(ArrayList<MayTinh> result) {
+        try {
+            tblModel.setRowCount(0);
+            for (MayTinh i : result) {
+                String loaimay;
+                if (LaptopDAO.getInstance().isLaptop(i.getMaMay()) == true) {
+                    loaimay = "Laptop";
+                } else {
+                    loaimay = "PC/Case";
+                }
+                tblModel.addRow(new Object[]{
+                    i.getMaMay(), i.getTenMay(), i.getSoLuong(), formatter.format(i.getGia()) + "đ", i.getTenCpu(), i.getRam(), i.getRom(), loaimay
+                });
+            }
+        } catch (Exception e) {
+        }
+    }
+
     public void changeTextFind() {
         jTextFieldSearch.getDocument().addDocumentListener(new DocumentListener() {
             @Override
@@ -485,6 +583,7 @@ public class TonKhoForm extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnDetail;
     private javax.swing.JButton btnEdit;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBoxLuaChon;

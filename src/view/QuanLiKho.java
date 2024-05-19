@@ -19,7 +19,7 @@ import model.Account;
  *
  * @author Tran Nhat Sinh
  */
-public class Admin extends javax.swing.JFrame {
+public class QuanLiKho extends javax.swing.JFrame {
 
     /**
      * Creates new form Navbar
@@ -27,27 +27,22 @@ public class Admin extends javax.swing.JFrame {
     Color DefaultColor, ClickedColor;
     private Account currentAcc;
 
-    private Admin() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     public Account getCurrentAcc() {
         return currentAcc;
     }
 
+    public void setCurrentAcc(Account currentAcc) {
+        this.currentAcc = currentAcc;
+    }
 
-    public Admin(Account t) throws UnsupportedLookAndFeelException {
-        ImageIcon logo = new ImageIcon(getClass().getResource("/icon/logo.png"));
-        setIconImage(logo.getImage());
+    public QuanLiKho() throws UnsupportedLookAndFeelException {
         UIManager.setLookAndFeel(new FlatLightLaf());
         UIManager.put("Table.showVerticalLines", true);
         UIManager.put("Table.showHorizontalLines", true);
         initComponents();
         setLocationRelativeTo(null);
-        this.currentAcc = t;
         ProductForm pf = new ProductForm();
         MainContent.add(pf).setVisible(true);
-//        pf.checkRole(currentAcc);
         DefaultColor = new Color(0, 132, 255);
         ClickedColor = new Color(0, 104, 204);
         NavbarMenu.setBackground(DefaultColor);
@@ -58,8 +53,9 @@ public class Admin extends javax.swing.JFrame {
         PhieuXuat.setBackground(DefaultColor);
         NhaCungCap.setBackground(DefaultColor);
         TonKho.setBackground(DefaultColor);
-        TaiKhoan1.setBackground(DefaultColor);
         ThongKe.setBackground(DefaultColor);
+        ImageIcon logo = new ImageIcon(getClass().getResource("/icon/logo.png"));
+        setIconImage(logo.getImage());
     }
 
     /**
@@ -90,8 +86,6 @@ public class Admin extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         TonKho = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        TaiKhoan1 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
         ThongKe = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         Account = new javax.swing.JPanel();
@@ -99,7 +93,7 @@ public class Admin extends javax.swing.JFrame {
         MainContent = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Phẩn mềm quản lý kho hàng máy tính");
+        setTitle("Quản lý kho hàng máy tính");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -251,7 +245,7 @@ public class Admin extends javax.swing.JFrame {
 
         NavbarMenu.add(XuatHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 240, 40));
 
-        DangXuat.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        DangXuat.setBackground(new java.awt.Color(0, 132, 255));
         DangXuat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DangXuatMouseClicked(evt);
@@ -378,6 +372,7 @@ public class Admin extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setBackground(new java.awt.Color(0, 132, 255));
         jLabel10.setFont(new java.awt.Font("SF Pro Display", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-warehouse-25.png"))); // NOI18N
@@ -401,41 +396,6 @@ public class Admin extends javax.swing.JFrame {
         );
 
         NavbarMenu.add(TonKho, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 240, -1));
-
-        TaiKhoan1.setBackground(new java.awt.Color(0, 132, 255));
-        TaiKhoan1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        TaiKhoan1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TaiKhoan1MouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                TaiKhoan1MousePressed(evt);
-            }
-        });
-
-        jLabel12.setFont(new java.awt.Font("SF Pro Display", 1, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_test_account_25px.png"))); // NOI18N
-        jLabel12.setText("TÀI KHOẢN");
-
-        javax.swing.GroupLayout TaiKhoan1Layout = new javax.swing.GroupLayout(TaiKhoan1);
-        TaiKhoan1.setLayout(TaiKhoan1Layout);
-        TaiKhoan1Layout.setHorizontalGroup(
-            TaiKhoan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TaiKhoan1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel12)
-                .addContainerGap(85, Short.MAX_VALUE))
-        );
-        TaiKhoan1Layout.setVerticalGroup(
-            TaiKhoan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TaiKhoan1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel12)
-                .addContainerGap(9, Short.MAX_VALUE))
-        );
-
-        NavbarMenu.add(TaiKhoan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 240, -1));
 
         ThongKe.setBackground(new java.awt.Color(0, 132, 255));
         ThongKe.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -470,9 +430,9 @@ public class Admin extends javax.swing.JFrame {
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
-        NavbarMenu.add(ThongKe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 240, -1));
+        NavbarMenu.add(ThongKe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 240, -1));
 
-        Account.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        Account.setBackground(new java.awt.Color(0, 132, 255));
         Account.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Account.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -483,10 +443,11 @@ public class Admin extends javax.swing.JFrame {
             }
         });
 
+        jLabel14.setBackground(new java.awt.Color(0, 132, 255));
         jLabel14.setFont(new java.awt.Font("SF Pro Display", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-information-25.png"))); // NOI18N
-        jLabel14.setText("ĐỔI THÔNG TIN");
+        jLabel14.setText("THÔNG TIN");
 
         javax.swing.GroupLayout AccountLayout = new javax.swing.GroupLayout(Account);
         Account.setLayout(AccountLayout);
@@ -536,7 +497,6 @@ public class Admin extends javax.swing.JFrame {
         PhieuXuat.setBackground(DefaultColor);
         NhaCungCap.setBackground(DefaultColor);
         TonKho.setBackground(DefaultColor);
-        TaiKhoan1.setBackground(DefaultColor);
         ThongKe.setBackground(DefaultColor);
         MainContent.removeAll();
         ProductForm p = new ProductForm();
@@ -552,7 +512,6 @@ public class Admin extends javax.swing.JFrame {
         PhieuXuat.setBackground(DefaultColor);
         NhaCungCap.setBackground(ClickedColor);
         TonKho.setBackground(DefaultColor);
-        TaiKhoan1.setBackground(DefaultColor);
         ThongKe.setBackground(DefaultColor);
     }//GEN-LAST:event_NhaCungCapMousePressed
 
@@ -565,7 +524,6 @@ public class Admin extends javax.swing.JFrame {
         PhieuXuat.setBackground(DefaultColor);
         NhaCungCap.setBackground(DefaultColor);
         TonKho.setBackground(DefaultColor);
-        TaiKhoan1.setBackground(DefaultColor);
         ThongKe.setBackground(DefaultColor);
     }//GEN-LAST:event_NhapHangMousePressed
 
@@ -578,7 +536,6 @@ public class Admin extends javax.swing.JFrame {
         PhieuXuat.setBackground(DefaultColor);
         NhaCungCap.setBackground(DefaultColor);
         TonKho.setBackground(DefaultColor);
-        TaiKhoan1.setBackground(DefaultColor);
         ThongKe.setBackground(DefaultColor);
     }//GEN-LAST:event_PhieuNhapMousePressed
 
@@ -591,7 +548,6 @@ public class Admin extends javax.swing.JFrame {
         PhieuXuat.setBackground(DefaultColor);
         NhaCungCap.setBackground(DefaultColor);
         TonKho.setBackground(DefaultColor);
-        TaiKhoan1.setBackground(DefaultColor);
         ThongKe.setBackground(DefaultColor);
     }//GEN-LAST:event_XuatHangMousePressed
 
@@ -604,7 +560,6 @@ public class Admin extends javax.swing.JFrame {
         PhieuXuat.setBackground(ClickedColor);
         NhaCungCap.setBackground(DefaultColor);
         TonKho.setBackground(DefaultColor);
-        TaiKhoan1.setBackground(DefaultColor);
         ThongKe.setBackground(DefaultColor);
     }//GEN-LAST:event_PhieuXuatMousePressed
 
@@ -624,7 +579,6 @@ public class Admin extends javax.swing.JFrame {
         PhieuXuat.setBackground(DefaultColor);
         NhaCungCap.setBackground(DefaultColor);
         TonKho.setBackground(ClickedColor);
-        TaiKhoan1.setBackground(DefaultColor);
         ThongKe.setBackground(DefaultColor);
     }//GEN-LAST:event_TonKhoMousePressed
 
@@ -693,26 +647,6 @@ public class Admin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_DangXuatMouseClicked
 
-    private void TaiKhoan1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TaiKhoan1MouseClicked
-        // TODO add your handling code here:
-        AccountForm ac = new AccountForm();
-        MainContent.removeAll();
-        MainContent.add(ac).setVisible(true);
-    }//GEN-LAST:event_TaiKhoan1MouseClicked
-
-    private void TaiKhoan1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TaiKhoan1MousePressed
-        // TODO add your handling code here:
-        SanPham.setBackground(DefaultColor);
-        PhieuNhap.setBackground(DefaultColor);
-        NhapHang.setBackground(DefaultColor);
-        XuatHang.setBackground(DefaultColor);
-        PhieuXuat.setBackground(DefaultColor);
-        NhaCungCap.setBackground(DefaultColor);
-        TonKho.setBackground(DefaultColor);
-        TaiKhoan1.setBackground(ClickedColor);
-        ThongKe.setBackground(DefaultColor);
-    }//GEN-LAST:event_TaiKhoan1MousePressed
-
     private void ThongKeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ThongKeMouseClicked
         // TODO add your handling code here:
         ThongKeForm tk = new ThongKeForm();
@@ -730,7 +664,6 @@ public class Admin extends javax.swing.JFrame {
         PhieuXuat.setBackground(DefaultColor);
         NhaCungCap.setBackground(DefaultColor);
         TonKho.setBackground(DefaultColor);
-        TaiKhoan1.setBackground(DefaultColor);
     }//GEN-LAST:event_ThongKeMousePressed
 
     private void AccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AccountMouseClicked
@@ -744,7 +677,6 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_AccountMousePressed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        // TODO add your handling code here:
         int resp = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn muốn thoát ?", "Exit?", JOptionPane.YES_NO_OPTION);
         if (resp == JOptionPane.YES_OPTION) {
             this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -760,7 +692,11 @@ public class Admin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Admin().setVisible(true);
+                try {
+                    new QuanLiKho().setVisible(true);
+                } catch (UnsupportedLookAndFeelException ex) {
+                    Logger.getLogger(QuanLiKho.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -768,7 +704,6 @@ public class Admin extends javax.swing.JFrame {
     public void setName(String name) {
         this.NameUser.setText(name);
     }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Account;
@@ -781,13 +716,11 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JPanel PhieuNhap;
     private javax.swing.JPanel PhieuXuat;
     private javax.swing.JPanel SanPham;
-    private javax.swing.JPanel TaiKhoan1;
     private javax.swing.JPanel ThongKe;
     private javax.swing.JPanel TonKho;
     private javax.swing.JPanel XuatHang;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
