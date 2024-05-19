@@ -687,10 +687,7 @@ public class QuanLiKho extends javax.swing.JFrame {
         });
     }
 
-    public void setName(String name) {
-        this.NameUser.setText(name);
-    }
-
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Account;
     private javax.swing.JPanel DangXuat;
