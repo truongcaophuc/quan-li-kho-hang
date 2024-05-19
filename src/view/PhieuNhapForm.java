@@ -251,7 +251,7 @@ public class PhieuNhapForm extends javax.swing.JInternalFrame {
         jToolBar1.setBorder(javax.swing.BorderFactory.createTitledBorder("Chức năng"));
         jToolBar1.setRollover(true);
 
-        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_delete_40px.png"))); // NOI18N
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-delete-40.png"))); // NOI18N
         btnDelete.setText("Xoá");
         btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDelete.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -263,7 +263,7 @@ public class PhieuNhapForm extends javax.swing.JInternalFrame {
         });
         jToolBar1.add(btnDelete);
 
-        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_edit_40px.png"))); // NOI18N
+        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-edit-40.png"))); // NOI18N
         btnEdit.setText("Sửa");
         btnEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEdit.setFocusable(false);
@@ -276,7 +276,7 @@ public class PhieuNhapForm extends javax.swing.JInternalFrame {
         });
         jToolBar1.add(btnEdit);
 
-        btnDetail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_eye_40px.png"))); // NOI18N
+        btnDetail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-detail-40.png"))); // NOI18N
         btnDetail.setText("Xem chi tiết");
         btnDetail.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDetail.setFocusable(false);
@@ -290,7 +290,7 @@ public class PhieuNhapForm extends javax.swing.JInternalFrame {
         jToolBar1.add(btnDetail);
         jToolBar1.add(jSeparator1);
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_spreadsheet_file_40px.png"))); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-export-excel-40.png"))); // NOI18N
         jButton6.setText("Xuất Excel");
         jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -334,7 +334,7 @@ public class PhieuNhapForm extends javax.swing.JInternalFrame {
         });
         jPanel3.add(jTextFieldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 310, 40));
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_reset_25px_1.png"))); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-reload-25.png"))); // NOI18N
         jButton7.setText("Làm mới");
         jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton7.addActionListener(new java.awt.event.ActionListener() {

@@ -206,7 +206,7 @@ public class AccountForm extends javax.swing.JInternalFrame {
         jToolBar1.setBorder(javax.swing.BorderFactory.createTitledBorder("Chức năng"));
         jToolBar1.setRollover(true);
 
-        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_add_40px.png"))); // NOI18N
+        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-add-40.png"))); // NOI18N
         btnAdd.setText("Thêm");
         btnAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAdd.setFocusable(false);
@@ -219,7 +219,7 @@ public class AccountForm extends javax.swing.JInternalFrame {
         });
         jToolBar1.add(btnAdd);
 
-        btnDeleteAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_delete_40px.png"))); // NOI18N
+        btnDeleteAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-delete-40.png"))); // NOI18N
         btnDeleteAccount.setText("Xoá");
         btnDeleteAccount.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDeleteAccount.setFocusable(false);
@@ -232,7 +232,7 @@ public class AccountForm extends javax.swing.JInternalFrame {
         });
         jToolBar1.add(btnDeleteAccount);
 
-        btnEditAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_edit_40px.png"))); // NOI18N
+        btnEditAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-edit-40.png"))); // NOI18N
         btnEditAccount.setText("Sửa");
         btnEditAccount.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEditAccount.setFocusable(false);
@@ -245,7 +245,7 @@ public class AccountForm extends javax.swing.JInternalFrame {
         });
         jToolBar1.add(btnEditAccount);
 
-        btnEditAccount1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-update-left-rotation-40.png"))); // NOI18N
+        btnEditAccount1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-update-40.png"))); // NOI18N
         btnEditAccount1.setText("Đặt lại");
         btnEditAccount1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEditAccount1.setFocusable(false);
@@ -259,7 +259,7 @@ public class AccountForm extends javax.swing.JInternalFrame {
         jToolBar1.add(btnEditAccount1);
         jToolBar1.add(jSeparator1);
 
-        exportExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_spreadsheet_file_40px.png"))); // NOI18N
+        exportExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-export-excel-40.png"))); // NOI18N
         exportExcel.setText("Xuất Excel");
         exportExcel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         exportExcel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -320,7 +320,7 @@ public class AccountForm extends javax.swing.JInternalFrame {
         });
         jPanel3.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 320, 40));
 
-        btnreset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_reset_25px_1.png"))); // NOI18N
+        btnreset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-reload-25.png"))); // NOI18N
         btnreset.setText("Làm mới");
         btnreset.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnreset.addActionListener(new java.awt.event.ActionListener() {

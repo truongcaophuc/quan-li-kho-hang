@@ -357,7 +357,7 @@ public class DetailProduct extends javax.swing.JDialog {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 880, 330));
 
-        jPanel2.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        jPanel2.setBackground(new java.awt.Color(0, 132, 255));
 
         jLabel1.setBackground(new java.awt.Color(0, 132, 255));
         jLabel1.setFont(new java.awt.Font("SF Pro Display", 1, 24)); // NOI18N

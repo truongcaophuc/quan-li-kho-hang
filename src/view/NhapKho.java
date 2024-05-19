@@ -72,8 +72,6 @@ public class NhapKho extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         DangXuat = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        NameUser = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         Account = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         MainContent = new javax.swing.JPanel();
@@ -104,8 +102,8 @@ public class NhapKho extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("SF Pro Display", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_import_25px.png"))); // NOI18N
-        jLabel2.setText("NHẬP HÀNG");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-import-25.png"))); // NOI18N
+        jLabel2.setText("Nhập hàng");
 
         javax.swing.GroupLayout NhapHangLayout = new javax.swing.GroupLayout(NhapHang);
         NhapHang.setLayout(NhapHangLayout);
@@ -114,7 +112,7 @@ public class NhapKho extends javax.swing.JFrame {
             .addGroup(NhapHangLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabel2)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         NhapHangLayout.setVerticalGroup(
             NhapHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,7 +122,7 @@ public class NhapKho extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        NavbarMenu.add(NhapHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 240, -1));
+        NavbarMenu.add(NhapHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 240, -1));
 
         PhieuNhap.setBackground(new java.awt.Color(0, 132, 255));
         PhieuNhap.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -139,8 +137,8 @@ public class NhapKho extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("SF Pro Display", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_add_file_25px_2.png"))); // NOI18N
-        jLabel3.setText("PHIẾU NHẬP");
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-add-file-25.png"))); // NOI18N
+        jLabel3.setText("Phiếu nhập");
 
         javax.swing.GroupLayout PhieuNhapLayout = new javax.swing.GroupLayout(PhieuNhap);
         PhieuNhap.setLayout(PhieuNhapLayout);
@@ -149,7 +147,7 @@ public class NhapKho extends javax.swing.JFrame {
             .addGroup(PhieuNhapLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel3)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         PhieuNhapLayout.setVerticalGroup(
             PhieuNhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,9 +157,9 @@ public class NhapKho extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        NavbarMenu.add(PhieuNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 240, 40));
+        NavbarMenu.add(PhieuNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 240, 40));
 
-        DangXuat.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        DangXuat.setBackground(new java.awt.Color(0, 132, 255));
         DangXuat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DangXuatMouseClicked(evt);
@@ -173,8 +171,8 @@ public class NhapKho extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("SF Pro Display", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_shutdown_25px.png"))); // NOI18N
-        jLabel5.setText("ĐĂNG XUẤT");
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-log-out-25.png"))); // NOI18N
+        jLabel5.setText("Đăng xuất");
 
         javax.swing.GroupLayout DangXuatLayout = new javax.swing.GroupLayout(DangXuat);
         DangXuat.setLayout(DangXuatLayout);
@@ -183,7 +181,7 @@ public class NhapKho extends javax.swing.JFrame {
             .addGroup(DangXuatLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabel5)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         DangXuatLayout.setVerticalGroup(
             DangXuatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,19 +193,7 @@ public class NhapKho extends javax.swing.JFrame {
 
         NavbarMenu.add(DangXuat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 690, 240, -1));
 
-        NameUser.setFont(new java.awt.Font("SF Pro Display", 1, 18)); // NOI18N
-        NameUser.setForeground(new java.awt.Color(255, 255, 255));
-        NameUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        NameUser.setText("ADMIN");
-        NameUser.setToolTipText("");
-        NavbarMenu.add(NameUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 160, -1));
-
-        jLabel8.setFont(new java.awt.Font("SF Pro Display", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("HI !");
-        NavbarMenu.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 40, -1));
-
-        Account.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        Account.setBackground(new java.awt.Color(0, 132, 255));
         Account.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Account.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -221,7 +207,7 @@ public class NhapKho extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("SF Pro Display", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-information-25.png"))); // NOI18N
-        jLabel14.setText("THÔNG TIN");
+        jLabel14.setText("Thông tin");
 
         javax.swing.GroupLayout AccountLayout = new javax.swing.GroupLayout(Account);
         Account.setLayout(AccountLayout);
@@ -350,7 +336,6 @@ public class NhapKho extends javax.swing.JFrame {
     private javax.swing.JPanel Account;
     private javax.swing.JPanel DangXuat;
     private javax.swing.JPanel MainContent;
-    private javax.swing.JLabel NameUser;
     private javax.swing.JPanel NavbarMenu;
     private javax.swing.JPanel NhapHang;
     private javax.swing.JPanel PhieuNhap;
@@ -358,6 +343,5 @@ public class NhapKho extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }

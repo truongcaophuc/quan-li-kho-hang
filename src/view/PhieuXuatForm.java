@@ -140,7 +140,7 @@ public class PhieuXuatForm extends javax.swing.JInternalFrame {
         jToolBar1.setRollover(true);
 
         btnDelete.setFont(new java.awt.Font("SF Pro Display", 0, 15)); // NOI18N
-        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_delete_40px.png"))); // NOI18N
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-delete-40.png"))); // NOI18N
         btnDelete.setText("Xoá");
         btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDelete.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -153,7 +153,7 @@ public class PhieuXuatForm extends javax.swing.JInternalFrame {
         jToolBar1.add(btnDelete);
 
         btnEdit.setFont(new java.awt.Font("SF Pro Display", 0, 15)); // NOI18N
-        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_edit_40px.png"))); // NOI18N
+        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-edit-40.png"))); // NOI18N
         btnEdit.setText("Sửa");
         btnEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEdit.setFocusable(false);
@@ -167,7 +167,7 @@ public class PhieuXuatForm extends javax.swing.JInternalFrame {
         jToolBar1.add(btnEdit);
 
         btnDetail.setFont(new java.awt.Font("SF Pro Display", 0, 15)); // NOI18N
-        btnDetail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_eye_40px.png"))); // NOI18N
+        btnDetail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-detail-40.png"))); // NOI18N
         btnDetail.setText("Xem chi tiết");
         btnDetail.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDetail.setFocusable(false);
@@ -182,7 +182,7 @@ public class PhieuXuatForm extends javax.swing.JInternalFrame {
         jToolBar1.add(jSeparator1);
 
         jButton6.setFont(new java.awt.Font("SF Pro Display", 0, 15)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_spreadsheet_file_40px.png"))); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-export-excel-40.png"))); // NOI18N
         jButton6.setText("Xuất Excel");
         jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -224,7 +224,7 @@ public class PhieuXuatForm extends javax.swing.JInternalFrame {
         jPanel3.add(jTextFieldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 310, 40));
 
         jButton7.setFont(new java.awt.Font("SF Pro Display", 0, 15)); // NOI18N
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_reset_25px_1.png"))); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-reload-25.png"))); // NOI18N
         jButton7.setText("Làm mới");
         jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -355,9 +355,6 @@ public class PhieuXuatForm extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addGap(6, 6, 6))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 764, Short.MAX_VALUE)
@@ -367,6 +364,10 @@ public class PhieuXuatForm extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -379,9 +380,9 @@ public class PhieuXuatForm extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1180, 750));

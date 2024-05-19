@@ -303,7 +303,7 @@ public class ThongKeForm extends javax.swing.JInternalFrame {
         jLabel8.setText("Từ");
         jPanel13.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 20, 20));
 
-        btnResetThongKePr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_reset_25px_1.png"))); // NOI18N
+        btnResetThongKePr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-reload-25.png"))); // NOI18N
         btnResetThongKePr.setText("Làm mới");
         btnResetThongKePr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -362,7 +362,7 @@ public class ThongKeForm extends javax.swing.JInternalFrame {
         jToolBar1.setBorder(javax.swing.BorderFactory.createTitledBorder("Chức năng"));
         jToolBar1.setRollover(true);
 
-        btnDetail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_eye_40px.png"))); // NOI18N
+        btnDetail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-detail-40.png"))); // NOI18N
         btnDetail.setText("Xem chi tiết");
         btnDetail.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDetail.setFocusable(false);
@@ -399,7 +399,7 @@ public class ThongKeForm extends javax.swing.JInternalFrame {
         });
         jPanel3.add(jTextFieldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 310, 40));
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_reset_25px_1.png"))); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-reload-25.png"))); // NOI18N
         jButton7.setText("Làm mới");
         jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -607,7 +607,7 @@ public class ThongKeForm extends javax.swing.JInternalFrame {
         });
         jPanel7.add(jTextFieldSearch1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 320, 40));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_reset_25px_1.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-reload-25.png"))); // NOI18N
         jButton1.setText("Làm mới");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -675,8 +675,9 @@ public class ThongKeForm extends javax.swing.JInternalFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel9.setBackground(new java.awt.Color(255, 204, 0));
+        jPanel9.setBackground(new java.awt.Color(89, 168, 105));
 
+        txtQuantityProduct.setBackground(new java.awt.Color(89, 168, 105));
         txtQuantityProduct.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
         txtQuantityProduct.setForeground(new java.awt.Color(255, 255, 255));
         txtQuantityProduct.setText("100");
@@ -685,7 +686,7 @@ public class ThongKeForm extends javax.swing.JInternalFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Sản phẩm trong kho");
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-monitor-80.png"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-pc-80.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -694,7 +695,7 @@ public class ThongKeForm extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtQuantityProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
@@ -737,7 +738,7 @@ public class ThongKeForm extends javax.swing.JInternalFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtQuantityNcc, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -753,9 +754,9 @@ public class ThongKeForm extends javax.swing.JInternalFrame {
                 .addGap(10, 10, 10))
         );
 
-        jPanel11.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel11.setBackground(new java.awt.Color(0, 132, 255));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-account-80.png"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-user-80.png"))); // NOI18N
 
         txtQuantityUser.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
         txtQuantityUser.setForeground(new java.awt.Color(255, 255, 255));
@@ -799,9 +800,9 @@ public class ThongKeForm extends javax.swing.JInternalFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(61, 61, 61)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );

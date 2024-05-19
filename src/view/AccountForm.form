@@ -214,7 +214,7 @@
             <Component class="javax.swing.JButton" name="btnAdd">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icon/icons8_add_40px.png"/>
+                  <Image iconType="3" name="/icon/icons8-add-40.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -231,7 +231,7 @@
             <Component class="javax.swing.JButton" name="btnDeleteAccount">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icon/icons8_delete_40px.png"/>
+                  <Image iconType="3" name="/icon/icons8-delete-40.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Xo&#xe1;"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -248,7 +248,7 @@
             <Component class="javax.swing.JButton" name="btnEditAccount">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icon/icons8_edit_40px.png"/>
+                  <Image iconType="3" name="/icon/icons8-edit-40.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -265,7 +265,7 @@
             <Component class="javax.swing.JButton" name="btnEditAccount1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icon/icons8-update-left-rotation-40.png"/>
+                  <Image iconType="3" name="/icon/icons8-update-40.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#x110;&#x1eb7;t l&#x1ea1;i"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -284,7 +284,7 @@
             <Component class="javax.swing.JButton" name="exportExcel">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icon/icons8_spreadsheet_file_40px.png"/>
+                  <Image iconType="3" name="/icon/icons8-export-excel-40.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Xu&#x1ea5;t Excel"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -374,7 +374,7 @@
             <Component class="javax.swing.JButton" name="btnreset">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icon/icons8_reset_25px_1.png"/>
+                  <Image iconType="3" name="/icon/icons8-reload-25.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="L&#xe0;m m&#x1edb;i"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">

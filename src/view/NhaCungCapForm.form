@@ -216,7 +216,7 @@
                   <Font name="SF Pro Display" size="15" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icon/icons8_add_40px.png"/>
+                  <Image iconType="3" name="/icon/icons8-add-40.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -236,7 +236,7 @@
                   <Font name="SF Pro Display" size="15" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icon/icons8_delete_40px.png"/>
+                  <Image iconType="3" name="/icon/icons8-delete-40.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Xo&#xe1;"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -253,7 +253,7 @@
                   <Font name="SF Pro Display" size="15" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icon/icons8_edit_40px.png"/>
+                  <Image iconType="3" name="/icon/icons8-edit-40.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -272,7 +272,7 @@
                   <Font name="SF Pro Display" size="15" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icon/icons8_spreadsheet_file_40px.png"/>
+                  <Image iconType="3" name="/icon/icons8-export-excel-40.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Xu&#x1ea5;t Excel"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -369,7 +369,7 @@
                   <Font name="SF Pro Display" size="15" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icon/icons8_reset_25px_1.png"/>
+                  <Image iconType="3" name="/icon/icons8-reload-25.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="L&#xe0;m m&#x1edb;i"/>
               </Properties>
@@ -395,7 +395,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="120" width="1160" height="620"/>
+              <AbsoluteConstraints x="20" y="120" width="1160" height="620"/>
             </Constraint>
           </Constraints>
 

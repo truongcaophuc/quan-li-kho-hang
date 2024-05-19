@@ -206,7 +206,7 @@ public class NhaCungCapForm extends javax.swing.JInternalFrame {
         jToolBar1.setRollover(true);
 
         btnAdd.setFont(new java.awt.Font("SF Pro Display", 0, 15)); // NOI18N
-        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_add_40px.png"))); // NOI18N
+        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-add-40.png"))); // NOI18N
         btnAdd.setText("Thêm");
         btnAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnAdd.setFocusable(false);
@@ -220,7 +220,7 @@ public class NhaCungCapForm extends javax.swing.JInternalFrame {
         jToolBar1.add(btnAdd);
 
         jButton4.setFont(new java.awt.Font("SF Pro Display", 0, 15)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_delete_40px.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-delete-40.png"))); // NOI18N
         jButton4.setText("Xoá");
         jButton4.setFocusable(false);
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -233,7 +233,7 @@ public class NhaCungCapForm extends javax.swing.JInternalFrame {
         jToolBar1.add(jButton4);
 
         jButton5.setFont(new java.awt.Font("SF Pro Display", 0, 15)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_edit_40px.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-edit-40.png"))); // NOI18N
         jButton5.setText("Sửa");
         jButton5.setFocusable(false);
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -247,7 +247,7 @@ public class NhaCungCapForm extends javax.swing.JInternalFrame {
         jToolBar1.add(jSeparator1);
 
         exportExcel.setFont(new java.awt.Font("SF Pro Display", 0, 15)); // NOI18N
-        exportExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_spreadsheet_file_40px.png"))); // NOI18N
+        exportExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-export-excel-40.png"))); // NOI18N
         exportExcel.setText("Xuất Excel");
         exportExcel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         exportExcel.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -298,7 +298,7 @@ public class NhaCungCapForm extends javax.swing.JInternalFrame {
         jPanel3.add(txtSearchForm, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 400, 40));
 
         btnReset.setFont(new java.awt.Font("SF Pro Display", 0, 15)); // NOI18N
-        btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_reset_25px_1.png"))); // NOI18N
+        btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-reload-25.png"))); // NOI18N
         btnReset.setText("Làm mới");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -325,7 +325,7 @@ public class NhaCungCapForm extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblNCC);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 1160, 620));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 1160, 620));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1180, 750));
 

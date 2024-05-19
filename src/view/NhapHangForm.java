@@ -222,7 +222,7 @@ public class NhapHangForm extends javax.swing.JInternalFrame {
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 580, 400));
 
-        btnNhapHang.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        btnNhapHang.setBackground(new java.awt.Color(89, 168, 105));
         btnNhapHang.setForeground(new java.awt.Color(255, 255, 255));
         btnNhapHang.setText("Nhập hàng");
         btnNhapHang.setBorder(null);
@@ -294,9 +294,8 @@ public class NhapHangForm extends javax.swing.JInternalFrame {
         txtSoLuong.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtSoLuong.setText("1");
 
-        addProduct.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        addProduct.setBackground(new java.awt.Color(0, 132, 255));
         addProduct.setForeground(new java.awt.Color(255, 255, 255));
-        addProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_add_25px_5.png"))); // NOI18N
         addProduct.setText("Thêm");
         addProduct.setBorder(null);
         addProduct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -315,7 +314,7 @@ public class NhapHangForm extends javax.swing.JInternalFrame {
             }
         });
 
-        btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_reset_25px_1.png"))); // NOI18N
+        btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-reload-25.png"))); // NOI18N
         btnReset.setText("Làm mới");
         btnReset.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnReset.addActionListener(new java.awt.event.ActionListener() {
