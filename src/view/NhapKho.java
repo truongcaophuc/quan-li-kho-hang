@@ -47,8 +47,8 @@ public class NhapKho extends javax.swing.JFrame {
         nhaphang.setNguoiNhapHang(this.currentAcc.getUser());
         MainContent.removeAll();
         MainContent.add(nhaphang).setVisible(true);
-        DefaultColor = new Color(89, 168, 105);
-        ClickedColor = new Color(26, 188, 156);
+        DefaultColor = new Color(0, 132, 255);
+        ClickedColor = new Color(0, 104, 204);
         NavbarMenu.setBackground(DefaultColor);
         PhieuNhap.setBackground(DefaultColor);
         NhapHang.setBackground(ClickedColor);
