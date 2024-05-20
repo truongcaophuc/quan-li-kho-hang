@@ -11,7 +11,7 @@ import dao.AccountDAO;
 
 /**
  *
- * 
+ * @author Tran Nhat Sinh
  */
 public class AddAccount extends javax.swing.JDialog {
 
@@ -91,7 +91,7 @@ public class AddAccount extends javax.swing.JDialog {
         vaitro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(vaitro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 298, 38));
 
-        jButton1.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        jButton1.setBackground(new java.awt.Color(0, 132, 255));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Thêm");
         jButton1.setBorder(null);
@@ -117,7 +117,7 @@ public class AddAccount extends javax.swing.JDialog {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 140, 38));
 
-        jPanel2.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        jPanel2.setBackground(new java.awt.Color(0, 132, 255));
 
         jLabel1.setFont(new java.awt.Font("SF Pro Display", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));

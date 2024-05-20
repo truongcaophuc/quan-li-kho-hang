@@ -36,7 +36,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  *
- * 
+ * @author Tran Nhat Sinh
  */
 public class XuatHangForm extends javax.swing.JInternalFrame {
 
@@ -210,7 +210,7 @@ public class XuatHangForm extends javax.swing.JInternalFrame {
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 580, 450));
 
-        btnNhapHang.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        btnNhapHang.setBackground(new java.awt.Color(89, 168, 105));
         btnNhapHang.setForeground(new java.awt.Color(255, 255, 255));
         btnNhapHang.setText("Xuất hàng");
         btnNhapHang.setBorder(null);
@@ -231,7 +231,7 @@ public class XuatHangForm extends javax.swing.JInternalFrame {
         textTongTien.setText("0đ");
         jPanel2.add(textTongTien, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 690, -1, 30));
 
-        deleteProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_delete_25px_1.png"))); // NOI18N
+        deleteProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-delete-25.png"))); // NOI18N
         deleteProduct.setText("Xoá sản phẩm");
         deleteProduct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         deleteProduct.addActionListener(new java.awt.event.ActionListener() {
@@ -241,7 +241,7 @@ public class XuatHangForm extends javax.swing.JInternalFrame {
         });
         jPanel2.add(deleteProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 610, 150, 40));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_edit_25px.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-edit-25.png"))); // NOI18N
         jButton1.setText("Sửa số lượng");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -288,9 +288,8 @@ public class XuatHangForm extends javax.swing.JInternalFrame {
             }
         });
 
-        addProduct.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        addProduct.setBackground(new java.awt.Color(0, 132, 255));
         addProduct.setForeground(new java.awt.Color(255, 255, 255));
-        addProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_add_25px_5.png"))); // NOI18N
         addProduct.setText("Thêm");
         addProduct.setBorder(null);
         addProduct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -309,7 +308,7 @@ public class XuatHangForm extends javax.swing.JInternalFrame {
             }
         });
 
-        btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_reset_25px_1.png"))); // NOI18N
+        btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-reload-25.png"))); // NOI18N
         btnReset.setText("Làm mới");
         btnReset.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnReset.addActionListener(new java.awt.event.ActionListener() {

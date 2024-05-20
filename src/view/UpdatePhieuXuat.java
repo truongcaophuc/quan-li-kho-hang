@@ -27,7 +27,7 @@ import model.PhieuXuat;
 
 /**
  *
- *
+ * @author Tran Nhat Sinh
  */
 public class UpdatePhieuXuat extends javax.swing.JDialog {
 
@@ -235,7 +235,7 @@ public class UpdatePhieuXuat extends javax.swing.JDialog {
         jPanel2.add(textTongTien, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 590, -1, 30));
 
         deleteProduct.setFont(new java.awt.Font("SF Pro Display", 0, 15)); // NOI18N
-        deleteProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_delete_25px_1.png"))); // NOI18N
+        deleteProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-delete-25.png"))); // NOI18N
         deleteProduct.setText("Xoá sản phẩm");
         deleteProduct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         deleteProduct.addActionListener(new java.awt.event.ActionListener() {
@@ -246,7 +246,7 @@ public class UpdatePhieuXuat extends javax.swing.JDialog {
         jPanel2.add(deleteProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, 160, 40));
 
         jButton1.setFont(new java.awt.Font("SF Pro Display", 0, 15)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_edit_25px.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-edit-25.png"))); // NOI18N
         jButton1.setText("Sửa số lượng");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -281,10 +281,9 @@ public class UpdatePhieuXuat extends javax.swing.JDialog {
         txtSoLuong.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtSoLuong.setText("1");
 
-        addProduct.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        addProduct.setBackground(new java.awt.Color(0, 132, 255));
         addProduct.setFont(new java.awt.Font("SF Pro Display", 0, 15)); // NOI18N
         addProduct.setForeground(new java.awt.Color(255, 255, 255));
-        addProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_add_25px_5.png"))); // NOI18N
         addProduct.setText("Thêm");
         addProduct.setBorder(null);
         addProduct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
