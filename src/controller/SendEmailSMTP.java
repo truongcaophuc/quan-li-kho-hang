@@ -8,8 +8,8 @@ import java.util.Properties;
 public class SendEmailSMTP {
 
     public static void sendOTP(String emailTo, String otp) {
-        String username = "transinh085@gmail.com";
-        String password = "espehdmxgwlckipi";
+        String username = "admin@gmail.com";
+        String password = "123456";
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
         prop.put("mail.smtp.port", "587");
